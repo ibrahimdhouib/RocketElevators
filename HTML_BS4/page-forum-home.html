@@ -36,32 +36,6 @@
 <!-- wrapper -->
 <div id="wrapper">
 
-    <!--
-        AVAILABLE HEADER CLASSES
-
-        Default nav height: 96px
-        .header-md 		= 70px nav height
-        .header-sm 		= 60px nav height
-
-        .b-0 		= remove bottom border (only with transparent use)
-        .transparent	= transparent header
-        .translucent	= translucent header
-        .sticky			= sticky header
-        .static			= static header
-        .dark			= dark header
-        .bottom			= header on bottom
-
-        shadow-before-1 = shadow 1 header top
-        shadow-after-1 	= shadow 1 header bottom
-        shadow-before-2 = shadow 2 header top
-        shadow-after-2 	= shadow 2 header bottom
-        shadow-before-3 = shadow 3 header top
-        shadow-after-3 	= shadow 3 header bottom
-
-        .clearfix		= required for mobile menu, do not remove!
-
-        Example Usage:  class="clearfix sticky header-sm transparent b-0"
-    -->
     <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
         <!-- TOP NAV -->
@@ -78,21 +52,9 @@
                     <img src="assets/images/_smarty/R2.png" alt=""/>
                 </a>
 
-                <!--
-                    Top Nav
-
-                    AVAILABLE CLASSES:
-                    submenu-dark = dark sub menu
-                -->
                 <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
                     <nav class="nav-main">
 
-                        <!--
-                            .nav-onepage
-                            Required for onepage navigation links
-
-                            Add .external for an external link!
-                        -->
                         <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
                             <li class="active"><!-- HOME -->
                                 <a href="index-onepage-rocketelevators.html">
@@ -157,26 +119,20 @@
     </div>
 
 
-    <div class="">
-
-
+    <div class="container">
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="margin-bottom: 2% ">
                 <label>Building Type</label>
                 <select class="form-control pointer" id="TypeBuilding" name="form[type]"
                         onchange="selectTypeBuilding()">
-                    <option value="">--- Select  ---</option>
+                    <option value="">--- Select ---</option>
                     <option value="Residential">Residential</option>
                     <option value="commercial">commercial</option>
                     <option value="corporatif">corporatif</option>
                     <option value="Hybrid"> hybrid</option>
                 </select>
-
-
             </div>
-
-
         </div>
 
 
@@ -197,10 +153,12 @@
                 </div>
             </div>
         </div>
-        <div id="divCommercial" style="display: none">
+
+
+        <div id="divCommercial" style="display: none ">
             <div class="row">
                 <div class="col-md-4">
-                    <label>The number of distinct businesses.</label>
+                    <label> The number of distinct businesses.</label>
                     <input class="form-control " type="number" min="0" id="nb_commerces_Commercial">
                 </div>
                 <div class="col-md-4">
@@ -208,7 +166,7 @@
                     <input class="form-control " type="number" min="0" id="nb_etage_Commercial">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of basements contained in the building
+                    <label>The number of basements  in the building
                     </label>
                     <input class="form-control " type="number" min="0" id="nb_sous_sol_Commercial">
                 </div>
@@ -234,7 +192,7 @@
                     <input class="form-control " type="number" min="0" id="nb_etage_Corporate">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of basements contained in the building</label>
+                    <label>The number of basements in the building</label>
                     <input class="form-control " type="number" min="0" id="nb_sous_sol_Corporate">
                 </div>
                 <div class="col-md-4">
@@ -255,11 +213,11 @@
                     <input class="form-control " type="number" min="0" id="nb_commerces_Commercial_Hybrid">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of floors contained in the building</label>
+                    <label>The number of floors in the building</label>
                     <input class="form-control " type="number" min="0" id="nb_etage_Hybrid">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of basements contained in the building</label>
+                    <label>The number of basements in the building</label>
                     <input class="form-control " type="number" min="0" id="nb_sous_sol_Hybrid">
                 </div>
                 <div class="col-md-4">
@@ -271,66 +229,65 @@
                     <input class="form-control " type="number" min="0" id="nb_occupants_Hybrid">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of hours of activity of the building (the maximum being 24)
-                        .</label>
+                    <label>The number of hours of activity of the building</label>
                     <input class="form-control " type="number" min="0" max="24" id="nb_hour_activity">
                 </div>
             </div>
         </div>
 
 
-        <div class="col-md-12" style="display: none" id="divCalculCage">
+        <div class="col-md-6" style=" margin-left: 36% ; display: none ;margin-top: 2%; margin-bottom: 4%" ; id="divCalculCage">
             <br>
 
             <label><i class="fa fa-arrow-right"></i> Number of lift cage</label>
 
-            <input type="text" id="nb_total_cage"   READONLY>
+            <input type="text" id="nb_total_cage" READONLY>
 
-            <button class="btn btn-primary " onclick="CalculNbCage()">CALCUL</button>
+            <button class="btn btn-primary" onclick="CalculNbCage()">CALCUL</button>
 
         </div>
 
-        <div class="border-bottom-dashed"  id="cost" style="display: none" >
+        <div class="border-bottom-dashed" id="cost" style="display: none ; margin-bottom: 2%">
 
-            <!--        The range of elevator-->
-            <div class="row  ">
+            <!--The range of elevator-->
+            <div class="row  " style="margin-left: 30% ; margin-bottom: 2%">
 
-                <div class="col-md-3">
+                <div class="col-md-2" style=" text-align: center">
                     <p> The range of elevators</p>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="standard" name="range" onchange="SelectRange()" value="standard">
+                    <input type="radio" id="standard" name="range" onchange="SelectRange()" value="standard" style="  margin-left: 25% ">
                     <label for="standard">standard</label>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="premium " name="range" onchange="SelectRange()" value="premium">
+                    <input type="radio" id="premium " name="range" onchange="SelectRange()" value="premium" style="  margin-left: 25% ">
                     <label for="premium ">premium </label>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="excelium " name="range" onchange="SelectRange()" value="excelium">
+                    <input type="radio" id="excelium " name="range" onchange="SelectRange()" value="excelium" style="  margin-left: 25% ">
                     <label for="excelium ">excelium </label>
                 </div>
             </div>
 
             <div>
-                <!--            price-->
+                <!--price-->
                 <div class="row  ">
                     <div class="col-md-4">
-                        <label>The unit price for an elevator</label>
+                        <label> The unit price for an elevator   </label>
                         <input class="form-control " type="number" min="0" id="prix_unitaire_cage" readonly>
                     </div>
                     <div class="col-md-4">
-                        <label>% of installation</label>
+                        <label> % of installation </label>
                         <input class="form-control " type="number" min="0" id="frais_installation" readonly>
                     </div>
                     <div class="col-md-4">
-                        <label class="text-blue">The estimated cost of installation </label>
+                        <label> The estimated cost of installation </label>
                         <input class="form-control " type="number" min="0" id="cout_installation_estime" readonly>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- / -->
+
 
     </div>
     <!-- FOOTER -->
@@ -342,11 +299,15 @@
 
                 <!-- col #1 -->
                 <div class="col-md-8">
-                    <h3 class="letter-spacing-1">WHY US?</h3>
 
+                    <!-- Logo -->
+                    <a class="img-fluid" href="#top">
+                        <img src="assets/images/_smarty/R2.png"  style="margin-bottom: 4%"    width="200" height="80" alt="" />
+                    </a>
                     <!-- Small Description -->
                     <p>
-                        Rocket Elevators </p>
+                        Rocket Elevators is a large fictional company that develops, manufactures and markets elevators, escalators, moving walkways, and related equipment. .
+                    </p>
                     <h2>+1 581-701-0303</h2>
                 </div>
                 <!-- /col #1 -->
@@ -358,14 +319,12 @@
                     <!-- Newsletter Form -->
                     <p>Subscribe to Our Newsletter to get Important News & Offers</p>
 
-                    <form class="validate" action="php/newsletter.php" method="post"
-                          data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+                    <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="email" id="email" name="email" class="form-control required"
-                                   placeholder="Enter your Email">
+                            <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
                             <span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
+										<button class="btn btn-primary" type="submit">Subscribe</button>
 									</span>
                         </div>
                     </form>
@@ -382,8 +341,12 @@
 
         <div class="copyright">
             <div class="container">
-
-                &copy; All Rights Reserved, Company Rocket Elevators
+                <ul class="float-right m-0 list-inline mobile-block">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li>&bull;</li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+                &copy; All Rights Reserved, Company LTD
             </div>
         </div>
 
@@ -490,18 +453,13 @@
     function CalculNbCage() {
         var select = document.getElementById("TypeBuilding");
         var valeur = select.value;
-
-        //nombre de cages d'ascenseur
         var nb_total_cage = 0;
 
         document.getElementById("nb_total_cage").value = 0;
 
         if (valeur == "commercial") {
-            // Si le  type d’immeuble est commercial, le nombre de cages d'ascenseurs à déployer est spécifié et
-            // le nombre de cages estimées est égal au nombre requis.
             var nb_elevatordeployed_Commercial = document.getElementById("nb_elevatordeployed_Commercial").value;
             nb_total_cage = nb_elevatordeployed_Commercial;
-
         }
 
 
@@ -510,34 +468,17 @@
             var nb_appartments_Residential = document.getElementById("nb_appartments_Residential").value;
             var nb_etage_Residential = document.getElementById("nb_etage_Residential").value;
             var nb_sous_sol_Residential = document.getElementById("nb_sous_sol_Residential").value;
-            // logements par le nombre d’étages (excluant le nombre de sous-sols)
-            // pour obtenir une moyenne de logements par étages et
-            // on a besoin d’une cage d'ascenseur à tous les 6 appartements.
-            // Si l’appartement a plus de 20 étages, il faut prévoir deux colonnes d'ascenseurs et ainsi doubler les nombres de cages d'ascenseurs.
-            // On ajoute donc une nouvelle colonne à chaque tranche de 20 étages.
-
-
-            var  n = nb_appartments_Residential/6;
-            var t=nb_etage_Residential/20;
-
-
-            nb_total_cage = n * t*nb_etage_Residential;
-
-
-
-
-
+            var moyen = nb_appartments_Residential / nb_etage_Residential;
+            var t = (nb_etage_Residential * 1 + nb_sous_sol_Residential * 1);
+            var nbcolone = t / 20;
+            moyen = Math.floor(moyen) + 1;
+            nbcolone = Math.floor(nbcolone) + 1;
+            var x = moyen / 6;
+            x = Math.floor(x) + 1;
+            nb_total_cage = x * nbcolone;
         }
 
         if (valeur == "corporatif") {
-            // Si le type d’immeuble est Corporatif ou Hybride, on multiplie le nombre d’occupants maximum par étage
-            // par le nombre d’étages (incluant le nombre de sous-sols) pour obtenir le nombre d’occupants total.
-            // Le nombre d'ascenseurs est déterminé par le nombre d’occupants divisé par 1000.
-            // On divise le nombre d’étages (incluant le nombre de sous-sols) par 20 pour
-            // obtenir le nombre de colonnes d'ascenseurs requises.
-            // Il faut ensuite diviser le nombre d’ascenseurs par le nombre de colonne pour obtenir une moyenne
-            // du nombre d’ascenseurs par colonne. Le nombre total d'ascenseurs est déterminé
-            // par cette moyenne d'ascenseurs par colonne multiplié par le nombre de colonnes.
             var nb_company_Corporate = document.getElementById("nb_company_Corporate").value;
             var nb_etage_Corporate = document.getElementById("nb_etage_Corporate").value;
             var nb_sous_sol_Corporate = document.getElementById("nb_sous_sol_Corporate").value;
@@ -549,12 +490,10 @@
             var moyen_nb_asencenceur = nb_ascenceur / nb_colone_require;
             nb_total_cage = moyen_nb_asencenceur * nb_colone_require;
 
-
         }
 
 
         if (valeur == "Hybrid") {
-
 
 
             var nb_commerces_Commercial_Hybrid = document.getElementById("nb_commerces_Commercial_Hybrid").value;
@@ -563,18 +502,13 @@
             var nb_parking_Hybrid = document.getElementById("nb_parking_Hybrid").value;
             var nb_occupants_Hybrid = document.getElementById("nb_occupants_Hybrid").value;
             var nb_occupant_total = nb_commerces_Commercial_Hybrid * (nb_etage_Hybrid + nb_sous_sol_Hybrid);
-
             var nb_ascenceur = nb_occupant_total / 1000;
-
             var nb_colone_require = (nb_etage_Hybrid + nb_sous_sol_Hybrid) / 20;
             var moyen_nb_asencenceur = nb_ascenceur / nb_colone_require;
-
             nb_total_cage = moyen_nb_asencenceur * nb_colone_require;
-
-
         }
 
-        nb_total_cage=Math.round(nb_total_cage);
+        nb_total_cage = Math.round(nb_total_cage);
         document.getElementById("nb_total_cage").value = nb_total_cage;
         document.getElementById("cost").style.display = "block";
         SelectRange();
@@ -583,12 +517,9 @@
 
     function VideInput() {
         document.getElementById("nb_total_cage").value = 0;
-
         document.getElementById("prix_unitaire_cage").value = 0;
         document.getElementById("frais_installation").value = 0;
-
         document.getElementById("cout_installation_estime").value = 0;
-
     }
 
 
