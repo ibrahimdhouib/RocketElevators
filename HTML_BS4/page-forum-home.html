@@ -166,7 +166,7 @@
                     <input class="form-control " type="number" min="0" id="nb_etage_Commercial">
                 </div>
                 <div class="col-md-4">
-                    <label>The number of basements  in the building
+                    <label>The number of basements in the building
                     </label>
                     <input class="form-control " type="number" min="0" id="nb_sous_sol_Commercial">
                 </div>
@@ -236,7 +236,8 @@
         </div>
 
 
-        <div class="col-md-6" style=" margin-left: 36% ; display: none ;margin-top: 2%; margin-bottom: 4%" ; id="divCalculCage">
+        <div class="col-md-6" style=" margin-left: 36% ; display: none ;margin-top: 2%; margin-bottom: 4%" ;
+             id="divCalculCage">
             <br>
 
             <label><i class="fa fa-arrow-right"></i> Number of lift cage</label>
@@ -256,24 +257,27 @@
                     <p> The range of elevators</p>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="standard" name="range" onchange="SelectRange()" value="standard" style="  margin-left: 25% ">
+                    <input type="radio" id="standard" name="range" onchange="SelectRange()" value="standard"
+                           style="  margin-left: 25% ">
                     <label for="standard">standard</label>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="premium " name="range" onchange="SelectRange()" value="premium" style="  margin-left: 25% ">
+                    <input type="radio" id="premium " name="range" onchange="SelectRange()" value="premium"
+                           style="  margin-left: 25% ">
                     <label for="premium ">premium </label>
                 </div>
                 <div class="col-md-2">
-                    <input type="radio" id="excelium " name="range" onchange="SelectRange()" value="excelium" style="  margin-left: 25% ">
+                    <input type="radio" id="excelium " name="range" onchange="SelectRange()" value="excelium"
+                           style="  margin-left: 25% ">
                     <label for="excelium ">excelium </label>
                 </div>
             </div>
 
+            <!--price-->
             <div>
-                <!--price-->
                 <div class="row  ">
                     <div class="col-md-4">
-                        <label> The unit price for an elevator   </label>
+                        <label> The unit price for an elevator </label>
                         <input class="form-control " type="number" min="0" id="prix_unitaire_cage" readonly>
                     </div>
                     <div class="col-md-4">
@@ -287,13 +291,12 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+    <br/>
+    <br/>
     <!-- FOOTER -->
     <footer id="footer">
         <div class="container">
-
 
             <div class="row">
 
@@ -302,11 +305,13 @@
 
                     <!-- Logo -->
                     <a class="img-fluid" href="#top">
-                        <img src="assets/images/_smarty/R2.png"  style="margin-bottom: 4%"    width="200" height="80" alt="" />
+                        <img src="assets/images/_smarty/R2.png" style="margin-bottom: 4%" width="200" height="80"
+                             alt=""/>
                     </a>
                     <!-- Small Description -->
                     <p>
-                        Rocket Elevators is a large fictional company that develops, manufactures and markets elevators, escalators, moving walkways, and related equipment. .
+                        Rocket Elevators is a large fictional company that develops, manufactures and markets elevators,
+                        escalators, moving walkways, and related equipment.
                     </p>
                     <h2>+1 581-701-0303</h2>
                 </div>
@@ -319,10 +324,12 @@
                     <!-- Newsletter Form -->
                     <p>Subscribe to Our Newsletter to get Important News & Offers</p>
 
-                    <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+                    <form class="validate" action="php/newsletter.php" method="post"
+                          data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+                            <input type="email" id="email" name="email" class="form-control required"
+                                   placeholder="Enter your Email">
                             <span class="input-group-btn">
 										<button class="btn btn-primary" type="submit">Subscribe</button>
 									</span>
