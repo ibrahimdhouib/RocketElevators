@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Rocket Elevators - Quote</title>
+    <meta name="description" content="Ibrahim Dhouib"/>
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]"/>      <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+          rel="stylesheet" type="text/css"/>
+    <!-- CORE CSS -->
+    <link rel="icon" href="assets/css/_smarty/R2.png">
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- REVOLUTION SLIDER -->
+    <link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css"/>
+    <!-- THEME CSS -->
+    <link href="assets/css/essentials.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/layout.css" rel="stylesheet" type="text/css"/>      <!-- PAGE LEVEL SCRIPTS -->
+    <link href="assets/css/header-1.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme"/>
+</head>
+<body class="smoothscroll enable-animation">  <!-- wrapper -->
+<div id="wrapper">
+    <div id="header" class="navbar-toggleable-md sticky header-md clearfix">          <!-- TOP NAV -->
+        <header id="topNav">
+            <div class="container">                  <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse"><i
+                        class="fa fa-bars"></i></button>                  <!-- Logo --> <a
+                        class="logo float-left scrollTo" href="#top"> <img src="assets/css/_smarty/R2.png" alt=""/> </a>
+                <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                    <nav class="nav-main">
+                        <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                            <li class="active"><!-- HOME --> <a href="index.html"> HOME  </a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" href="#"> SERVICES  </a>
+                                <ul class="dropdown-menu">
+                                    <li><a target="_blank" href="residential-services.html">Residential Service </a></li>
+                                    <li><a target="_blank" href="corporate-services.html">Corporate Service </a></li>
+                                </ul>
+                            </li>
+                            <li><!-- WORK --> <a href="index.html #work"> Portfolio  </a></li>
+                            <li><!-- NEWS --> <a href="#news"> NEWS  </a></li>
+                            <li><!-- CLIENTS --> <a href="#clients"> CLIENTS  </a>
+                            <li><!-- CONTACT --> <a href="#contact"> CONTACT  </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>         <!-- /Top Nav -->      </div>
+    <div class="cover"><img src="assets/css/_smarty/CouponShield-Quote-Banner-2.jpg" alt="cover"
+                            style="width:100%; height: 450PX"></div>
+    <br> <br>
+    <div class="container">
+        <div class="heading-title heading-dotted text-center"><h2>Building Type</h2></div>
+    </div>
+    <div class="container">
+        <div class="box-light p-30">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="margin-bottom: 2% "><label
+                        class="font-weight-bold font-style text-center"> <b> Building Type <b/></label><select
+                        class="form-control pointer" id="TypeBuilding" name="form[type]"
+                        onchange="selectTypeBuilding()">
+                    <option value="">--- Select ---</option>
+                    <option value="Residential">Residential</option>
+                    <option value="commercial">commercial</option>
+                    <option value="corporatif">corporatif</option>
+                    <option value="Hybrid"> hybrid</option>
+                </select></div>
+            </div>
+            <hr>
+            <div id="divResidential" style="display: none">
+                <div class="row">
+                    <div class="col-md-4"><label>The number of apartments</label> <input class="form-control "
+                                                                                         type="number" min="0"
+                                                                                         id="nb_appartments_Residential"
+                                                                                         value="0"
+                                                                                         onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of floors</label> <input class="form-control " type="number"
+                                                                                     min="0" id="nb_etage_Residential"
+                                                                                     value="0" onkeyup="CalculNbCage()">
+                    </div>
+                    <div class="col-md-4"><label>The number of basements</label> <input class="form-control "
+                                                                                        type="number" min="0"
+                                                                                        id="nb_sous_sol_Residential"
+                                                                                        value="0"
+                                                                                        onkeyup="CalculNbCage()"></div>
+                </div>
+            </div>
+            <div id="divCommercial" style="display: none ">
+                <div class="row">
+                    <div class="col-md-4"><label> The number of distinct businesses.</label> <input
+                            class="form-control " type="number" min="0" id="nb_commerces_Commercial"></div>
+                    <div class="col-md-4"><label>The number of floors </label> <input class="form-control "
+                                                                                      type="number" min="0"
+                                                                                      id="nb_etage_Commercial"></div>
+                    <div class="col-md-4"><label>The number of basements  </label> <input class="form-control "
+                                                                                          type="number" min="0"
+                                                                                          id="nb_sous_sol_Commercial">
+                    </div>
+                    <div class="col-md-4"><label>The number of parking </label> <input class="form-control "
+                                                                                       type="number" min="0"
+                                                                                       id="nb_parking_Commercial"></div>
+                    <div class="col-md-4"><label>The number of elevator cages </label> <input class="form-control "
+                                                                                              type="number" min="0"
+                                                                                              id="nb_elevatordeployed_Commercial"
+                                                                                              value="0"
+                                                                                              onkeyup="CalculNbCage()">
+                    </div>
+                </div>
+            </div>
+            <div id="divCorporate" style="display: none">
+                <div class="row">
+                    <div class="col-md-4"><label>The number of separate tenant companies</label> <input
+                            class="form-control " type="number" min="0" id="nb_company_Corporate" value="0"
+                            onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of floors </label> <input class="form-control "
+                                                                                      type="number" min="0"
+                                                                                      id="nb_etage_Corporate" value="0"
+                                                                                      onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of basements </label> <input class="form-control "
+                                                                                         type="number" min="0"
+                                                                                         id="nb_sous_sol_Corporate"
+                                                                                         value="0"
+                                                                                         onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of parking </label> <input class="form-control "
+                                                                                       type="number" min="0"
+                                                                                       id="nb_parking_Corporate"
+                                                                                       value="0"
+                                                                                       onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The max number of occupants per floor</label> <input
+                            class="form-control " type="number" min="0" id="nb_occupants_Corporate" value="0"
+                            onkeyup="CalculNbCage()"></div>
+                </div>
+            </div>
+            <div id="divHybrid" style="display: none">
+                <div class="row">
+                    <div class="col-md-4"><label>The Number of distinct businesses </label> <input class="form-control "
+                                                                                                   type="number" min="0"
+                                                                                                   id="nb_commerces_Commercial_Hybrid"
+                                                                                                   value="0"
+                                                                                                   onkeyup="CalculNbCage()">
+                    </div>
+                    <div class="col-md-4"><label>The number of floors </label> <input class="form-control "
+                                                                                      type="number" min="0"
+                                                                                      id="nb_etage_Hybrid" value="0"
+                                                                                      onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of basements </label> <input class="form-control "
+                                                                                         type="number" min="0"
+                                                                                         id="nb_sous_sol_Hybrid"
+                                                                                         value="0"
+                                                                                         onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of parking </label> <input class="form-control "
+                                                                                       type="number" min="0"
+                                                                                       id="nb_parking_Hybrid" value="0"
+                                                                                       onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The max number of occupants per floor </label> <input
+                            class="form-control " type="number" min="0" id="nb_occupants_Hybrid" value="0"
+                            onkeyup="CalculNbCage()"></div>
+                    <div class="col-md-4"><label>The number of hours of activity </label> <input class="form-control "
+                                                                                                 type="number" min="0"
+                                                                                                 max="24"
+                                                                                                 id="nb_hour_activity"
+                                                                                                 value="0"
+                                                                                                 onkeyup="CalculNbCage()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div/>
+
+        <br> <br>
+        <div class="container">
+            <div class="heading-title heading-dotted text-center"><h2>Product Line</h2></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box-light p-30">                 <!--The range of elevator-->
+            <div class="row  " id="cost">
+                <div class="col-md-4" style=" text-align: center ; margin-top: 1%"><b> The range of elevators </b></div>
+                <div class="col-md-2"><input type="radio" id="standard" name="range" onchange="SelectRange()"
+                                             value="standard" checked  style="  margin-left: 20% "> <label
+                        for="standard"> <b>Standard </b></label></div>
+                <div class="col-md-2"><input type="radio" id="premium " name="range" onchange="SelectRange()"
+                                             value="premium" style="  margin-left: 20% "> <label
+                        for="premium "> <b>Premium</b> </label></div>
+
+                <div class="col-md-2"><input type="radio" id="excelium " name="range" onchange="SelectRange()"
+                                             value="excelium" style="  margin-left: 20% "> <label
+                        for="excelium "> <b>Excelium </b> </label></div>
+            </div>
+        </div>
+    </div>
+
+<br> <br>
+    <div class="container">
+        <div class="heading-title heading-dotted text-center"><h2>Your Quote</h2></div>
+    </div>
+    <hr>             <!--price-->
+    <div>
+        <div class="row  ">
+            <div class="col-md-3"><label><i class="fa fa-arrow-right"></i> Number of lift cage</label> <input
+                    type="text" class="form-control " id="nb_total_cage" READONLY></div>
+            <div class="col-md-3"><label> The unit price for an elevator (<i class="fa fa-dollar"></i>) </label> <input
+                    class="form-control "
+                    type="number" min="0"
+                    id="prix_unitaire_cage"
+                    readonly></div>
+            <div class="col-md-3"><label> Cost of installation (<i class="fa fa-dollar"></i>) </label> <input
+                    class="form-control " type="number"
+                    min="0" id="frais_installation"
+                    readonly></div>
+            <div class="col-md-3"><label> Total Cost (<i class="fa fa-dollar"></i>) </label> <input
+                    class="form-control alert-danger" type="number" min="0" id="cout_installation_estime"
+                    readonly></div>
+        </div>
+    </div>
+</div>
+</div>
+<br/> <br/>
+
+<!-- BUTTON CALLOUT -->
+<a href="#contact" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p40">
+				<span class="font-lato fs-30">
+					Did Rocket Elevators convince you?
+					<strong>Contact Us &raquo;</strong>
+				</span>
+</a>
+<!-- /BUTTON CALLOUT -->
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <header class="text-center mb-60" style="margin-top: -5%">
+            <h2>Contact Us</h2>
+            <p class="lead font-lato">Your satisfaction is our aim</p>
+            <hr/>
+        </header>
+        <div class="row">
+
+            <!-- FORM -->
+            <div class="col-md-8 col-sm-8">
+                <h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+
+                <!-- Alert Success -->
+                <div id="alert_success" class="alert alert-success mb-30">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Thank You!</strong> Your message successfully sent!
+                </div>
+                <!-- /Alert Success -->
+
+
+                <!-- Alert Failed -->
+                <div id="alert_failed" class="alert alert-danger mb-30">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>[SMTP] Error!</strong> Internal server error!
+                </div>
+                <!-- /Alert Failed -->
+
+
+                <!-- Alert Mandatory -->
+                <div id="alert_mandatory" class="alert alert-danger mb-30">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+                </div>
+                <!-- /Alert Mandatory -->
+
+
+                <form action="php/contact.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <input type="hidden" name="action" value="contact_send"/>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="contact:name">Full Name *</label>
+                                <input required type="text" value="" class="form-control" name="contact[name][required]"
+                                       id="contact:name">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact:name">Business Name *</label>
+                                <input required type="text" value="" class="form-control" name="contact[name][required]"
+                                       id="contact:name">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact:email">E-mail Address *</label>
+                                <input required type="email" value="" class="form-control"
+                                       name="contact[email][required]" id="contact:email">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact:phone">Phone</label>
+                                <input type="text" value="" class="form-control" name="contact[phone]"
+                                       id="contact:phone">
+                            </div>
+                            <div class="col-md-8">
+                                <label for="contact:subject">Project Name *</label>
+                                <input required type="text" value="" class="form-control"
+                                       name="contact[subject][required]" id="contact:subject">
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-8">
+                                <label for="contact:subject">Project Description *</label>
+                                <input required type="text" value="" class="form-control"
+                                       name="contact[subject][required]" id="contact:subject">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact_department">Department</label>
+                                <select class="form-control pointer" name="contact[department]">
+                                    <option value="">--- Select ---</option>
+                                    <option value="Marketing">Residential buildings</option>
+                                    <option value="Webdesign">corporate buildings</option>
+                                    <option value="Architecture">Commercial buildings</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="contact:message">Message *</label>
+                                <textarea required maxlength="10000" rows="8" class="form-control"
+                                          name="contact[message]" id="contact:message"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="contact:attachment">File Attachment</label>
+
+                                <!-- custom file upload -->
+                                <input class="custom-file-upload" type="file" id="file" name="contact[attachment]"
+                                       id="contact:attachment" data-btn-text="Select a File"/>
+                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /FORM -->
+
+
+            <!-- INFO -->
+            <div class="col-md-4 col-sm-4">
+                <h2>Visit Us</h2>
+                <iframe id="map-spacing"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.042993784821!2d-71.2818834840848!3d46.842843548415686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897d0e1cafe3f%3A0x9863b2d992c71670!2sCodeBoxx!5e0!3m2!1sfr!2sca!4v1599866854501!5m2!1sfr!2sca"
+                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                <hr
+                /
+                <p>
+                    <span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 418-725 Boulevard Lebourgneuf, Québec, QC G2J 0C4, Canada</span>
+                    <span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:1800-555-1234">+1 581-701-0303</a></span>
+                    <span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a
+                            href="mailto:mail@yourdomain.com">info@codeboxx.biz</a></span>
+                </p>
+            </div>
+            <!-- /INFO -->
+        </div>
+    </div>
+</section>
+<!-- /CONTACT -->
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <!-- col #1 -->
+            <div class="col-md-8">
+                <!-- Logo -->
+                <a class="img-fluid" href="#top">
+                    <img src="assets/css/_smarty/R2.png" style="margin-bottom: 4%" width="200" height="80" alt=""/>
+                </a>
+                <!-- Small Description -->
+                <p>
+                    Rocket Elevators is a large fictional company that develops, manufactures and markets elevators,
+                    escalators, moving walkways, and related equipment. .
+                </p>
+                <h2>+1 581-701-0303</h2>
+            </div>
+            <!-- /col #1 -->
+
+            <!-- col #2 -->
+            <div class="col-md-4">
+                <h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+                <!-- Newsletter Form -->
+                <p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+                <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!"
+                      data-toastr-position="bottom-right">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" id="email" name="email" class="form-control required"
+                               placeholder="Enter your Email">
+                        <span class="input-group-btn">
+										<button class="btn btn-primary" type="submit">Subscribe</button>
+									</span>
+                    </div>
+                </form>
+                <!-- /Newsletter Form -->
+            </div>
+            <!-- /col #2 -->
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <ul class="float-right m-0 list-inline mobile-block">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li>&bull;</li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+            &copy; All Rights Reserved, Company LTD
+        </div>
+    </div>
+</footer>
+<!-- /FOOTER -->
+
+
+</div> <!-- /wrapper -->   <!-- SCROLL TO TOP --> <a href="#" id="toTop"></a>
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="inner"><span class="loader"></span></div>
+</div> <!-- /PRELOADER -->   <!-- JAVASCRIPT FILES -->
+<script>     var plugin_path = 'assets/plugins/'; </script>
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="assets/js/scripts.js"></script>  <!-- STYLESWITCHER - REMOVE -->
+<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
+</body>
+<script>     function SelectRange() {
+    var range = $('input[name=range]:checked').val();
+    var prix_unitaire_cage = 0, frais_installation = 0, cout_installation_estime = 0;
+    var nb_total_cage = document.getElementById("nb_total_cage").value;
+    if (range == "standard") {
+        prix_unitaire_cage = 7565;
+        frais_installation = 10;
+    }
+    if (range == "premium") {
+        prix_unitaire_cage = 12345;
+        frais_installation = 13;
+    }
+    if (range == "excelium") {
+        prix_unitaire_cage = 15400;
+        frais_installation = 16;
+    }
+    document.getElementById("prix_unitaire_cage").value = prix_unitaire_cage.toFixed(3);
+    document.getElementById("frais_installation").value = (nb_total_cage * prix_unitaire_cage * frais_installation / 100).toFixed(3);
+    cout_installation_estime = (nb_total_cage * prix_unitaire_cage) * (1 + frais_installation / 100);
+    document.getElementById("cout_installation_estime").value = cout_installation_estime.toFixed(3);
+}
+
+function selectTypeBuilding() {
+    var select = document.getElementById("TypeBuilding");
+    var valeur = select.value;
+    var x = document.getElementById("divResidential");
+    var x2 = document.getElementById("divCommercial");
+    var x3 = document.getElementById("divCorporate");
+    var x4 = document.getElementById("divHybrid");
+    if (valeur === "Residential") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    if (valeur === "commercial") {
+        x2.style.display = "block";
+    } else {
+        x2.style.display = "none";
+    }
+    if (valeur === "corporatif") {
+        x3.style.display = "block";
+    } else {
+        x3.style.display = "none";
+    }
+    if (valeur === "Hybrid") {
+        x4.style.display = "block";
+    } else {
+        x4.style.display = "none";
+    }
+    VideInput();
+}
+
+function CalculNbCage() {
+    var select = document.getElementById("TypeBuilding");
+    var valeur = select.value;      //nombre de cages d'ascenseur 
+    var nb_total_cage = 0;
+    document.getElementById("nb_total_cage").value = 0;
+    if (valeur == "commercial") {
+        // Si le  type d’immeuble est commercial, le nombre de cages d'ascenseurs à déployer est spécifié et 
+// le nombre de cages estimées est égal au nombre requis. 
+        var nb_elevatordeployed_Commercial = document.getElementById("nb_elevatordeployed_Commercial").value;
+        nb_total_cage = nb_elevatordeployed_Commercial;
+    }
+    if (valeur === "Residential") {
+        var nb_appartments_Residential = document.getElementById("nb_appartments_Residential").value;
+        var nb_etage_Residential = document.getElementById("nb_etage_Residential").value;
+        var nb_sous_sol_Residential = document.getElementById("nb_sous_sol_Residential").value;
+        if (nb_etage_Residential != 0 && nb_appartments_Residential != 0) {
+            var moyen = nb_appartments_Residential / nb_etage_Residential;
+            var t = (parseInt(nb_etage_Residential) + parseInt(nb_sous_sol_Residential));
+            var nbcolone = t / 20;
+            moyen = Math.ceil(moyen);
+            nbcolone = Math.ceil(nbcolone);
+            var x = moyen / 6;
+            x = Math.ceil(x);
+            nb_total_cage = x * nbcolone;
+        }
+    }
+    if (valeur == "corporatif") {
+        var nb_company_Corporate = document.getElementById("nb_company_Corporate").value;
+        var nb_etage_Corporate = document.getElementById("nb_etage_Corporate").value;
+        var nb_sous_sol_Corporate = document.getElementById("nb_sous_sol_Corporate").value;
+        var nb_parking_Corporate = document.getElementById("nb_parking_Corporate").value;
+        var nb_occupants_Corporate = document.getElementById("nb_occupants_Corporate").value;
+        if (nb_etage_Corporate != 0 && nb_company_Corporate != 0 && nb_occupants_Corporate != 0) {
+            var nb_occupant_total = nb_occupants_Corporate * (nb_etage_Corporate * 1 + nb_sous_sol_Corporate * 1);
+            var nb_ascenceur = Math.ceil(nb_occupant_total / 1000);
+            var nb_colone_require = Math.ceil((nb_etage_Corporate * 1 + nb_sous_sol_Corporate * 1) / 20);
+            var moyen_nb_asencenceur = Math.ceil(nb_ascenceur / nb_colone_require);
+            nb_total_cage = moyen_nb_asencenceur * nb_colone_require;
+        }
+    }
+    if (valeur == "Hybrid") {
+        var nb_commerces_Commercial_Hybrid = document.getElementById("nb_commerces_Commercial_Hybrid").value;
+        var nb_etage_Hybrid = document.getElementById("nb_etage_Hybrid").value;
+        var nb_sous_sol_Hybrid = document.getElementById("nb_sous_sol_Hybrid").value;
+        var nb_parking_Hybrid = document.getElementById("nb_parking_Hybrid").value;
+        var nb_occupants_Hybrid = document.getElementById("nb_occupants_Hybrid").value;
+        if (nb_etage_Hybrid != 0 && nb_commerces_Commercial_Hybrid != 0 && nb_occupants_Hybrid != 0) {
+            var nb_occupant_total = nb_occupants_Hybrid * (nb_etage_Hybrid * 1 + nb_sous_sol_Hybrid * 1);
+            var nb_ascenceur = Math.ceil(nb_occupant_total / 1000);
+            var nb_colone_require = Math.ceil((nb_etage_Hybrid * 1 + nb_sous_sol_Hybrid * 1) / 20);
+            var moyen_nb_asencenceur = Math.ceil(nb_ascenceur / nb_colone_require);
+            nb_total_cage = moyen_nb_asencenceur * nb_colone_require;
+        }
+    }
+    document.getElementById("nb_total_cage").value = Math.ceil(nb_total_cage);
+    document.getElementById("cost").style.display = "block";
+    SelectRange();
+}
+
+function VideInput() {
+    document.getElementById("nb_total_cage").value = 0;
+    document.getElementById("prix_unitaire_cage").value = 0;
+    document.getElementById("frais_installation").value = 0;
+    document.getElementById("cout_installation_estime").value = 0;
+}
+
+</script>
+</html> 
+
